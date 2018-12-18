@@ -3,7 +3,7 @@ package yui.hesstina;
 public class Main {
 
     public static void main(String[] args) {
-        BookShelf bookShelf = new BookShelf(4);
+        BookShelf bookShelf = new BookShelf();
         bookShelf.appendBook(new Book("Around the World in 80 days"));
         bookShelf.appendBook(new Book("Bible"));
         bookShelf.appendBook(new Book("Cinderella"));

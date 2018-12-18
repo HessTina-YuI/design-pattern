@@ -1,26 +1,27 @@
 package yui.hesstina;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BookShelf implements Aggregate {
 
-    private Book[] books;
+    private List<Book> books;
     private int last = 0;
 
-    public BookShelf(int maxsize) {
-        books = new Book[maxsize];
+    BookShelf() {
+        books = new ArrayList<Book>();
     }
 
-    public Book getBookAt(int index) {
-        return books[index];
+    Book getBookAt(int index) {
+        return books.get(index);
     }
 
-    public void appendBook(Book book) {
-        if (last < books.length) {
-            books[last] = book;
-            last++;
-        }
+    void appendBook(Book book) {
+        books.add(book);
+        last++;
     }
 
-    public int getLength() {
+    int getLength() {
         return last;
     }
 
