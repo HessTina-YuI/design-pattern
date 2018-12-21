@@ -4,11 +4,17 @@ import yui.hesstina.framework.Product;
 
 public class IDCard extends Product {
 
+    private Integer id;
     private String owner;
 
-    IDCard(String owner) {
-        System.out.println(" 制作 " + owner + " 的ID卡 ");
+    IDCard(Integer id, String owner) {
+        System.out.println(" 制作 " + owner + " 的ID卡 编号为 " + id + " ");
+        this.id = id;
         this.owner = owner;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getOwner() {
@@ -17,7 +23,7 @@ public class IDCard extends Product {
 
     @Override
     public void use() {
-        System.out.println(" 使用 " + owner + " 的ID卡 ");
+        System.out.println(" 使用 " + owner + " 的ID卡 编号为 " + id + " ");
     }
 
 }

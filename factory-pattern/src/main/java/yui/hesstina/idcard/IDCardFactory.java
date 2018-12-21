@@ -8,19 +8,22 @@ import java.util.List;
 
 public class IDCardFactory extends Factory {
 
-    private List<String> owners = new ArrayList<>();
+    private List<IDCard> owners = new ArrayList<>();
 
-    public List<String> getOwners() {
-        return owners;
+    public void printOwners() {
+        owners.stream().forEach(owner -> System.out.println(" 编号 " + owner.getId() + " 名字 " + owner.getOwner()));
     }
 
     @Override
     protected Product createProduct(String owner) {
-        return new IDCard(owner);
+        if (owners.isEmpty()) {
+            return new IDCard(0, owner);
+        }
+        return new IDCard(owners.size(), owner);
     }
 
     @Override
     protected void registerProduct(Product product) {
-        owners.add(((IDCard) product).getOwner());
+        owners.add((IDCard) product);
     }
 }

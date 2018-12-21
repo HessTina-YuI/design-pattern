@@ -2,6 +2,7 @@ package yui.hesstina;
 
 import yui.hesstina.framework.Factory;
 import yui.hesstina.framework.Product;
+import yui.hesstina.idcard.IDCard;
 import yui.hesstina.idcard.IDCardFactory;
 
 import java.util.List;
@@ -16,9 +17,7 @@ public class Main {
         Product card3 = factory.create("木灵");
 
         System.out.println("========== 注册名单 ==========");
-        List<?> owners = ((IDCardFactory) factory).getOwners();
-        owners.forEach(owner -> System.out.print(" " + owner + " "));
-        System.out.println();
+        ((IDCardFactory) factory).printOwners();
 
         System.out.println("=========== 使用中 ===========");
         card1.use();
