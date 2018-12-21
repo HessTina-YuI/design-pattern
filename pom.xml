@@ -13,6 +13,7 @@
         <module>adapter-pattern</module>
         <module>template-pattern</module>
         <module>factory-pattern</module>
+        <module>singleton-pattern</module>
     </modules>
 
     <dependencies>
