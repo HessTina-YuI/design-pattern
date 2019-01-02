@@ -8,8 +8,8 @@ public class SingletonEnum {
 
         private SingletonEnum instance;
 
-        private Instance() {
-            new SingletonEnum();
+        Instance() {
+            instance = new SingletonEnum();
         }
 
         public SingletonEnum getEnum() {
@@ -18,11 +18,15 @@ public class SingletonEnum {
     }
 
     private SingletonEnum(){
-        System.out.println("生成单例 - 枚举方法");
+
     }
 
     public static SingletonEnum getInstance() {
         return Instance.INSTANCE.getEnum();
+    }
+
+    public void getTest() {
+        System.out.println("生成单例 - 枚举方法");
     }
 
 }
